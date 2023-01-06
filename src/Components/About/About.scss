@@ -1,0 +1,101 @@
+@import 'src/App.scss';
+#about{
+    background-color:$section-bg-color-2;
+}
+.about__container{
+    height: 100%;
+
+    h2{
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin-bottom: 1.2rem;
+       
+    }
+    
+    p{
+        line-height: 1.4;
+        color: $text-color-2;
+    }
+    
+}
+
+
+
+
+.about__cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 4.5rem;
+    gap: 3rem;
+}
+
+
+.about_image_container{
+    width: 3rem;
+    height: 3rem;
+    img{
+        width: 100%;
+    }
+   
+}
+
+.about__card-content{
+    h5{
+    font-size: 1rem;
+    margin: 1.5rem 0;
+    font-weight: 400;
+  
+    
+    }
+    p{
+       font-size: 0.8rem;
+       color: $text-color-2;
+       
+    }
+}
+
+
+// Mobile
+
+@media screen and (max-width:850px){
+    #about{
+        padding: 15% 10% ;
+    }
+
+    .about__cards{
+        grid-template-columns: 1fr;
+    
+    }
+
+
+    .about__container{
+        height: 100%;
+        h2{
+            text-align: center;
+            font-size: 1.7;
+            
+           
+        }
+        
+        p{
+           text-align: center ;
+           font-size: 0.9rem;
+        }
+        
+    }
+
+    .about__icons_container{
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    .about__card-content{
+        text-align: center;
+
+      
+    }
+
+ 
+    
+}

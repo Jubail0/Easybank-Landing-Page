@@ -1,0 +1,63 @@
+@import 'src/App.scss';
+
+
+#blog{
+    background-color: hsl(255,16%,98%);
+}
+
+.blog__container{
+    h2{
+        font-size: 2rem;
+        font-weight: 400;
+        
+       
+    }
+}
+
+
+.articles__grid{
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+
+}
+
+
+
+
+.articles__image-container{
+    img{
+        border-radius: 8px 8px 0 0;
+        height: 15rem;
+        width: 100%;
+       
+    }
+    
+    
+}
+
+
+.articles__card-content{
+padding: 2rem 2rem 2rem 1.5rem;
+background-color: #fff;
+
+small{
+    font-size: 0.7rem;
+    color: $text-color-2;
+}
+
+h3{
+    margin: 0.7rem 0;
+    font-weight: 300;
+    cursor: pointer;
+
+    &:active{
+        color: hsl(136, 65%, 51%);
+    }
+}
+p{
+    font-size: 0.8rem;
+    color: $text-color-2;
+}
+}
