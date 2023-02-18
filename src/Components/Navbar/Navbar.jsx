@@ -1,11 +1,27 @@
-import React,{useState} from 'react';
+import React from 'react';
 import './Navbar.scss';
 import logo from '../../images/logo.svg'
 import hamburger from '../../images/icon-hamburger.svg'
 import Close from'../../images/icon-close.svg'
 
-const Navbar = () => {
-  const[toggle,setToggle]=useState(false)
+const Navbar = ({toggle,setToggle}) => {
+  
+
+  const open = ()=>{
+    setToggle(prevState => !prevState);
+
+   
+    
+  }
+
+  React.useEffect(()=>{
+    if(toggle){
+      document.body.style.overflowY ='hidden'
+    }else {
+      document.body.style.overflowY ='visible'
+    }
+   
+  })
   return (
     <nav>
 
@@ -14,15 +30,15 @@ const Navbar = () => {
             <img src={logo} alt="logo"/>
             </div>
            
-          { toggle && <div className='nav__menu-list-1' style={{transform:'translateY(0)'}}>
+           <div className={ toggle? 'nav__menu-list-1  fadeIn-nav' : 'nav__menu-list-1  fadeOut-nav'}>
             
-               <a href='/'><li>Home</li></a> 
-               <a href='#about'><li>About</li></a>
-               <a href='#contact'><li>Contact</li></a>
-               <a href='#blog'><li>Blog</li></a>
-               <a href='#career'><li>Careers</li></a>
+               <a onClick={()=>setToggle(false)} href='/'><li>Home</li></a> 
+               <a onClick={()=>setToggle(false)} href='#about'><li>About</li></a>
+               <a onClick={()=>setToggle(false)} href='#contact'><li>Contact</li></a>
+               <a onClick={()=>setToggle(false)} href='#blog'><li>Blog</li></a>
+               <a onClick={()=>setToggle(false)} href='#career'><li>Careers</li></a>
               
-            </div> } 
+            </div> 
 
           <div className='nav__menu-list'>
            <a href='/'><li>Home</li></a> 
@@ -36,7 +52,7 @@ const Navbar = () => {
             
             <div>
             
-             <label onClick={()=>setToggle(prevState => !prevState)} className='hamburger'>
+             <label onClick={open} className='hamburger'>
              { toggle ? <img src={Close} alt="close"/>:<img src={hamburger} alt="hamburger"/>}
               
             </label> 

@@ -7,10 +7,12 @@ import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
 
 const App = () => {
+  const[toggle,setToggle]= React.useState(false)
   return (
     <div className='app'>
-      <Navbar/>
+      <Navbar toggle={toggle} setToggle ={setToggle} />
       <Header/>
+       <div className={toggle ? 'overlay fadeIn' : 'overlay fadeOut'}></div>
       <About/>
       <Blog/>
       <Footer/>
